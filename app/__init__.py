@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from flask.ext.pymongo import pyMongo
+from flask.ext.pymongo import PyMongo
 from flask.ext.mail import Mail
 
 
@@ -10,5 +10,6 @@ app.config.from_object('config')
 mail = Mail(app)
 
 app.config['MONGO_DBNAME'] = 'TrainingPortal'
-mongo = pyMongo(app, config_prefix='MONGO')
+mongo = PyMongo(app, config_prefix='MONGO')
 
+from app import views
